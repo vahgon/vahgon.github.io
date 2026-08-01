@@ -1,0 +1,7 @@
+<!-- https://jekyllcodex.org/without-plugin/reading-time-indicator/ -->
+{% capture words %}
+{{ content | number_of_words | minus: 180 }}
+{% endcapture %}
+{% unless words contains '-' %}
+{{ words | plus: 150 | divided_by: 150 | append: ' minutes to read' }}
+{% endunless %}

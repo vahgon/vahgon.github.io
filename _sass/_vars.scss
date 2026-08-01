@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+$font-header: "Open Sans", sans-serif !default;
+$font-base: sans-serif !default;
+
+@mixin media_query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
