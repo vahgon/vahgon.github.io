@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+$font-header: "Roboto Condenced", sans-serif !default;
+$font-base: "Montserrat", sans-serif !default;
+$font-code: "Google Sans Code", sans-serif !default;
+
+$spacing-unit: 30px !default;
+$base-font-size: 13px !default;
+$base-font-weight: 400 !default;
+
+$color-text: #BFBFBF !default;
+$color-text-imp: #E8E8E8 !default;
+
+$color-background: #010125 !default;
+$color-primary: #A5668B !default;
+$color-secondary: #69306D !default;
+
+$color-sky: #71A9F7 !default;
+$color-plum: #72195A !default;
+$color-crimson: #4C1036 !default;
+
+@use 'sass:color';
+
+@mixin lighten_color($color) {
+  @debug color.scale($color, $lightness: 30%);
+}
+
+@mixin darken_color($color) {
+  @debug color.scale($color, $lightness: -30%);
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+@mixin media_query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
