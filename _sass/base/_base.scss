@@ -1,0 +1,39 @@
+%vertical-rhythm {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+p {
+  @extend %vertical-rhythm;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+
+  &:link {
+    color: $color-primary;
+  }
+
+  &:visited {
+    color: $color-crimson;
+  }
+}
+
+.text-opts {
+  font-family: $font-base;
+  font-weight: 400;
+  font-size: $base-font-size;
+  color: $color-sky;
+
+  &.antialiased {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.site-content-container {
+  display: flex;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  background-color: $color-background;
+}
