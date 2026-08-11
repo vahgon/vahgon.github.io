@@ -2,4 +2,4 @@
 {% assign minutes = words | divided_by: 180 | ceil %}
 
 {% include icons.html icon="clock" %}
-<div itemprop="timeRequired" itemscope itemtype="http://schema.org/CreativeWork" content="PT{{ minutes }}M"> {{ minutes }} </div>
+<div class="reading-duration" itemprop="timeRequired" itemscope itemtype="http://schema.org/CreativeWork" content="PT{{ minutes }}M"> {{ minutes }} </div>
