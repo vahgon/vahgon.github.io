@@ -4,29 +4,60 @@ $font-header: "Roboto Condenced", sans-serif !default;
 $font-base: "Montserrat", sans-serif !default;
 $font-code: "Google Sans Code", sans-serif !default;
 
+$font-size-base: 10px !default;
+$font-size-title: 18px !default;
+$font-size-header: 13px !default;
+
+$font-weight-base: 400 !default;
+$font-weight-header: 600 !default;
+
 $spacing-unit: 30px !default;
+
 $base-font-size: 13px !default;
 $base-font-weight: 400 !default;
 
-$color-text: #BFBFBF !default;
-$color-text-imp: #E8E8E8 !default;
-
+$color-ptext: #E3F2FD !default;
+$color-htext: #E8E8E8;
 $color-background: #010125 !default;
+
 $color-primary: #A5668B !default;
 $color-secondary: #69306D !default;
 
 $color-sky: #71A9F7 !default;
 $color-plum: #72195A !default;
 $color-crimson: #4C1036 !default;
+$color-deep-plum: #2B042E !default;
+
+$color-alice-blue: #E3F2FD;
+$color-bright-snow: #FAFAFA;
+$color-alabaster-grey: #E8E8E8;
+$color-cotton-rose: #DBB3B1;
+$color-dusty-lavender: #A5668B;
+$color-velvet-purple: #69306D;
+$color-french-blue: #464591;
+$color-prussian-blue: #0B0D32;
+$color-prussian-dblue: #060525;
+$color-midnight-violet: #2B042E;
+
+$content-width: 800px !default;
+$on-palm:       600px !default;
+$on-laptop:     800px !default;
+
 
 @use 'sass:color';
 
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
 @mixin lighten_color($color) {
-  @debug color.scale($color, $lightness: 30%);
+  color: color.scale($color, $lightness: 30%);
 }
 
 @mixin darken_color($color) {
-  @debug color.scale($color, $lightness: -30%);
+  color: color.scale($color, $lightness: -30%);
 }
 
 @mixin relative-font-size($ratio) {
