@@ -1,0 +1,22 @@
+// 
+// *  sidebar  *
+//
+
+.site-icon {
+  height: 50px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.site-sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  align-items: center; 
+  order: 1;
+}
+
+.sidebar-content {
+  font: $font-base;
+}
