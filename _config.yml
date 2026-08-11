@@ -20,7 +20,7 @@ sass:
 collections:
   posts:
     output: true
-    permalink: /:collection/:title
+    permalink: /:collection/:name
   projects:
     output: true
     permalink: /:collection/:name
