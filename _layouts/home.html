@@ -2,14 +2,20 @@
 layout: default
 ---
 
-<div class="home">
+{%- include banner.html -%}
+
+<main class="flex column center-items">
+  <div class="flex column content-width">
+  <header>
   {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
   {%- endif -%}
+  </header>
 
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
+  <div class="container column">
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
     <ul class="post-list">
       {%- for post in site.posts -%}
@@ -30,5 +36,5 @@ layout: default
 
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
-
-</div>
+  </div>
+</main>
