@@ -1,13 +1,15 @@
 title: vahgon.dev
-email: ian@vahgon.dev
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: ""
 url: "https://vahgon.dev"
+
 twitter_username: vahgonn
 github_username:  vahgon
+email_print: ian [at] vahgon (dot) dev
+linkedin_username: mullins-ian
 
 highlighter: rouge
 
