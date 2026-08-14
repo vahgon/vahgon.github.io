@@ -1,0 +1,109 @@
+.banner-margin {
+  margin-top: 3em;
+}
+
+.banner-title {
+  font: 600 40px $font-alt-code;
+  letter-spacing: 0.3em;
+  
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 40px;
+    background-color: $color-ptext;
+    translate: 0 19%;
+    opacity: 95%;
+    animation: blinking 2s steps(1) infinite;
+  }
+}
+
+@keyframes blinking {
+  0% { background-color: transparent }
+  50% { background-color: $color-ptext; }
+}
+
+.social-list {
+  font-family: $font-alt-code;
+  font-size: 14px;
+  padding-top: 1em;
+
+  > li {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+.separator {
+  background-color: $color-ptext;
+  width: 0.9em;
+  height: 0.1em;
+}
+
+.li-info {
+  #info {
+    display: none;
+    overflow: hidden;
+  }
+
+  &:hover > #mask {
+    display: none;
+  }
+  &:hover > #info {
+    white-space: nowrap;
+    border-right: 1px solid white;
+    display: flex;
+    animation:
+      typing 3.5s steps(25, end),
+      border-caret .75s step-end;
+  }
+}
+
+@keyframes typing {
+  0%  { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes border-caret {
+  50% { border-color: $color-ptext; }
+}
+
+.podium {
+  position: relative;
+  width: 100%;
+  max-width: 150rem;
+  height: 6rem;
+  overflow: hidden;
+}
+
+.highlight,
+.highlight-blur {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 50%;
+  translate: -50% 50%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 7%, $color-ptext, rgba(0, 0, 0, 0.1) 93%);
+  border-radius: 100%;
+}
+
+.cover {
+  position: absolute;
+  inset: 0.5rem;
+  background: black;
+  border-radius: 400%;
+}
+
+.highlight-blur {
+  filter: blur(10px);
+  animation: floatAround 10s infinite alternate;
+}
+
+@keyframes floatAround {
+  0% {
+    filter: blur(11px);
+  }
+  100% {
+    filter: blur(9px);
+  }
+}
