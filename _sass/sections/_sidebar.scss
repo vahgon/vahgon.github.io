@@ -1,9 +1,5 @@
-// 
-// *  sidebar  *
-//
-
 .site-icon {
-  height: 50px;
+  height: 10em;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -12,11 +8,14 @@
 .site-sidebar {
   display: flex;
   flex-direction: column;
-  flex: 1 0 auto;
+  flex: 1 0 0;
   align-items: center; 
   order: 1;
+  min-width: 0;
+  position: sticky;
 }
 
 .sidebar-content {
   font: $font-base;
+  overflow: hidden;
 }

@@ -1,8 +1,18 @@
 <script src="{{ "/assets/js/copy.js" | relative_url "}}"></script>
 
-<header role="banner">
-  <div class="display block">
+<script>
+  function parse_and_clip() {
+    navigator.clipboard.writeText(
+      document.getElementById("info-e").textContent.replaceAll(" [at] ", "@")
+                                                   .replaceAll(" (dot) ", ".")
+    );
+    document.getElementById("copy-popover").showPopover
+  }
+</script>
 
+<header role="banner">
+
+  <div class="display block">
     <h1 class="display block center-justify self">
       {{ site.title | lowcase }}
     </h1>
@@ -15,14 +25,18 @@
             <li>
               <div id="e-li">
                 <span id="mask">email</span>
-                <span id="info-e" onclick="parse_cpy()">{{ site.email_print }}</span>
+                <span id="info-e" onclick="parse_and_clip()" role="button">{{ site.email_print }}</span>
               <div>
             </li>
 
             <li>
               <div id="g-li">
                 <span class="separator" id="mask">github</span>
-                <span class="separator" id="info-g">@{{ site.github_username }}</span>
+                <span class="separator" id="info-g">
+                  <a href="https://github.com/{{ site.github_username}}">
+                  @{{ site.github_username }}
+                  </a>
+                </span>
               </div>
             </li>
 
@@ -46,6 +60,8 @@
         <div class="cover"></div>
       </div>
     </div>
-
   </div>
+
+  <div popover id="copy-popover">copied to clipboard</div>
+
 </header>

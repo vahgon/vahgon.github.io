@@ -3,7 +3,7 @@
   flex-direction: column;
   flex: 2 0 auto;
   order: 2;
-  max-width: 35%;
+  max-width: 40%;
 
   p:first-child {
     margin-top: 0.5em;
@@ -25,7 +25,7 @@
   }
 
   time {
-    @include lighten-color($color-ptext);
+    color: lighten-color($color-ptext);
     font-size: 11px;
     width: fit-content;
     font-style: italic;
@@ -52,7 +52,7 @@
 .hidden {
   display: flex;
   flex-direction: column;
-  flex: 1 0 auto;
+  flex: 1 0 0;
   order: 3;
   visibility: hidden;
 }
