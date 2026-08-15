@@ -1,39 +1,41 @@
-<header role="banner">
-  <div class="block banner-margin">
+<script src="{{ "/assets/js/copy.js" | relative_url "}}"></script>
 
-    <h1 class="flex center-justified">
-      <span class="banner-title">{{ site.title | lowcase }}</span>
+<header role="banner">
+  <div class="display block">
+
+    <h1 class="display block center-justify self">
+      {{ site.title | lowcase }}
     </h1>
 
-    <div class="flex center-justified">
+    <div class="display block center-justify self">
+
       <nav>
+        <ol class="display flex row center-justify self">
 
-        <ol class="social-list flex row nowrap center-items">
-          <span class="separator" aria-hidden="true"></span>
-
-            <li class="li-info">
-              <span id="mask">email</span>
-              <span id="info">{{ site.email_print }}</span>
+            <li>
+              <div id="e-li">
+                <span id="mask">email</span>
+                <span id="info-e" onclick="parse_cpy()">{{ site.email_print }}</span>
+              <div>
             </li>
 
-          <span class="separator" aria-hidden="true"></span>
-
-            <li class="li-info">
-              <span id="mask">github</span>
-              <span id="info">@{{ site.github_username }}</span>
+            <li>
+              <div id="g-li">
+                <span class="separator" id="mask">github</span>
+                <span class="separator" id="info-g">@{{ site.github_username }}</span>
+              </div>
             </li>
 
-          <span class="separator" aria-hidden="true"></span>
-
-            <li class="li-info">
-              <span id="mask">linkedin</span>
-              <span id="info">@{{ site.linkedin_username }}</span>
+            <li>
+              <div id="l-li">
+                <span id="mask">linkedin</span>
+                <span id="info-l">@{{ site.linkedin_username }}</span>
+              </div>
             </li>
 
-          <span class="separator" aria-hidden="true"></span>
         </ol>
-
       </nav>
+
     </div>
 
     <div class="podium">
