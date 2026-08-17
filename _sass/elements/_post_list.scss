@@ -1,0 +1,47 @@
+.post-container {
+  display: flex;
+  justify-content: center;
+}
+
+.post-card {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 20em;
+  aspect-ratio: 5/3;
+  border-radius: .5em;
+  padding: 1rem;
+  font-size: clamp(0.8rem, 0.8vw, 1.5rem);
+
+  .thumbnail {
+    aspect-ratio: 5/3;
+  }
+
+  h3 {
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  h4 {
+  }
+
+  p {
+    &.excerpt {
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.post-mobile {
+  display: flex;
+  gap: 1em;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

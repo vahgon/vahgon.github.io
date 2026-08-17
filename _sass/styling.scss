@@ -1,9 +1,3 @@
-@import
-  "base/vars",
-  "base/base",
-  "sections/footer",
-  "sections/post",
-  "sections/banner",
-  "sections/topbar",
-  "sections/sidebar"
-;
+@forward 'base';
+@forward 'elements';
+@forward 'sections';
