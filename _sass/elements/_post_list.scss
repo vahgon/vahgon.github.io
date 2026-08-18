@@ -1,47 +1,53 @@
 .post-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 10px;
 }
 
-.post-card {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 20em;
-  aspect-ratio: 5/3;
-  border-radius: .5em;
-  padding: 1rem;
-  font-size: clamp(0.8rem, 0.8vw, 1.5rem);
-
-  .thumbnail {
-    aspect-ratio: 5/3;
-  }
+.card.post {
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
+  width: 45%;
+  height: fit-content;
+  padding: 1.1rem;
+  transition: scale 150ms ease-in-out;
 
   h3 {
+    text-decoration: none;
     margin: 0;
     text-wrap: balance;
-  }
+    font-size: 0.9rem;
 
-  h4 {
-  }
-
-  p {
-    &.excerpt {
-      margin: 0;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    a {
+      text-decoration: none;
     }
   }
-}
 
-.post-mobile {
-  display: flex;
-  gap: 1em;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+  .date-published {
+    font-style: oblique;
+    font-size: 0.75em;
+  }
 
-  &::-webkit-scrollbar {
+  .excerpt {
+    font-size: 0.8rem;
     display: none;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &:hover {
+    scale: 1.1;
+
+    .excerpt {
+      display: -webkit-box;
+      margin-top: auto;
+    }
+
+      @at-root (without: height) {
+        height: 25vh;
+    }
   }
 }
