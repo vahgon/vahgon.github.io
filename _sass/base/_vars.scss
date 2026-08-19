@@ -1,13 +1,15 @@
 @charset "utf-8";
 
+@use 'sass:map';
+
 $font-base: 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace !default;
 $font-header: 'Roboto Condenced', $font-base;
 $font-code: 'Fira Code', 'Cascadia Code', 'Source Code Pro', monospace !default;
 
-@function lighten_color($color) {
-  @return color.scale($color, $lightness: 30%);
-}
-
-@function darken_color($color) {
-  @return color.scale($color, $lightness: -30%);
-}
+$breakpoints: (
+  sm: 40rem,
+  md: 48rem,
+  lg: 64rem,
+  xl: 80rem,
+  xxl: 96rem
+);

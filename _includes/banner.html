@@ -1,65 +1,23 @@
-<script>
-  function parse_and_clip() {
-    navigator.clipboard.writeText(
-      document.getElementById("info-e").textContent.replaceAll(" [at] ", "@")
-                                                   .replaceAll(" (dot) ", ".")
-    );
-    document.getElementById("copy-popover").showPopover
-  }
-</script>
+<header role="banner" id="banner">
+  <h1 class="site-title">
+    <a href="{{ "/" | relative_url }}">{{ site.title | lowcase }}</a>
+  </h1>
 
-<header role="banner">
+  <nav>
+    <ol class="nav-list">
 
-  <div class="display block">
-    <h1 class="display block center-justify self">
-      {{ site.title | lowcase }}
-    </h1>
+      <li>
+        <a href="{{ "/about" | relative_url }}">about</a>
+      </li>
 
-    <div class="display block center-justify self">
+      <li>
+        <a href="{{ "/posts" | relative_url }}">posts</a>
+      </li>
 
-      <nav>
-        <ol class="display flex row center-justify self">
+      <li>
+        <a href="{{ "/projects" | relative_url }}">projects</a>
+      </li>
 
-            <li>
-              <div id="e-li">
-                <span id="mask">email</span>
-                <span id="info-e" onclick="parse_and_clip()" role="button">{{ site.email_print }}</span>
-              <div>
-            </li>
-
-            <li>
-              <div id="g-li">
-                <span class="separator" id="mask">github</span>
-                <span class="separator" id="info-g">
-                  <a href="https://github.com/{{ site.github_username}}">
-                  @{{ site.github_username }}
-                  </a>
-                </span>
-              </div>
-            </li>
-
-            <li>
-              <div id="l-li">
-                <span id="mask">linkedin</span>
-                <span id="info-l">@{{ site.linkedin_username }}</span>
-              </div>
-            </li>
-
-        </ol>
-      </nav>
-
-    </div>
-
-    <div class="podium">
-      <div class="highlight">
-        <div class="cover"></div>
-      </div>
-      <div class="highlight-blur">
-        <div class="cover"></div>
-      </div>
-    </div>
-  </div>
-
-  <div popover id="copy-popover">copied to clipboard</div>
-
+    </ol>
+  </nav>
 </header>

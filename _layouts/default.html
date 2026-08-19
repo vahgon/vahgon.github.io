@@ -4,7 +4,11 @@
     {%- include head.html -%}
   </head>
 
-  <body>
-    {{ content }}
+  <body class="grid">
+    {%- include banner.html -%}
+
+    <main id="page">
+      {{ content }}
+    </main>
   </body>
 </html>

@@ -1,0 +1,40 @@
+@use '../base/mixin' as mx;
+
+.home {
+  display: grid;
+  height: 100%;
+
+  grid-auto-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  gap: 10px;
+  
+
+  grid-template-areas:
+  "greet greet posts"
+  "greet greet posts"
+  "proj proj proj";
+
+  [id^="grid-"] {
+    border-radius: .5rem;
+  }
+}
+
+[id="grid-greet"] {
+  padding-left: 5em;
+  padding-right: 5em;
+  grid-area: greet;
+}
+
+[id="grid-posts"] {
+  display: inline-block;
+  grid-area: posts;
+
+  > h2 {
+    padding-bottom: 10px;
+  }
+}
+
+[id="grid-projects"] {
+  grid-area: proj;
+}

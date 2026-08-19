@@ -1,15 +1,17 @@
 .post-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
   flex-flow: column nowrap;
   gap: 10px;
 }
 
 .card.post {
+  position: relative;
   font-size: clamp(0.5rem, 1rem, 1.5rem);
-  width: 45%;
-  height: fit-content;
+  width: 100%;
+  height: 4rem;
   padding: 1.1rem;
   transition: scale 150ms ease-in-out;
 
@@ -18,6 +20,7 @@
     margin: 0;
     text-wrap: balance;
     font-size: 0.9rem;
+    mix-blend-mode: plus-lighter;
 
     a {
       text-decoration: none;
@@ -32,22 +35,18 @@
   .excerpt {
     font-size: 0.8rem;
     display: none;
+    -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     line-clamp: 3;
-    -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
   &:hover {
-    scale: 1.1;
+    height: fit-content;
+    position: absolute;
 
     .excerpt {
       display: -webkit-box;
-      margin-top: auto;
-    }
-
-      @at-root (without: height) {
-        height: 25vh;
     }
   }
 }

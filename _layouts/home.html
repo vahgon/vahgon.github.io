@@ -1,38 +1,46 @@
 ---
 layout: default
 ---
+<div class="home">
 
-{%- include banner.html -%}
-
-<main class="display block center-justify self"> 
-  <div class="display flex row fit-content">
-    <header>
-    {%- if page.title -%}
-      <h1>{{ page.title }}</h1>
-    {%- endif -%}
-    </header>
+<div id="grid-greet">{{ content }}</div>
 
   {%- if site.posts.size > 0 -%}
-  <div class="display flex column">
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
+  <div id="grid-posts">
+    <h2>Posts</h2>
+    <ul class="post-container">
       {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
+      <li class="post card">
+
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+
+        {%- assign date_format = "%b %-d, %Y" -%}
+        <time class="date-published">{{ post.date | date: date_format }}</time>
+
+        <div class="excerpt">
+          <p>{{ post.excerpt | strip_html }}</p>
+        </div>
+
       </li>
       {%- endfor -%}
     </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%}
   </div>
-</main>
+  {%- endif -%}
+
+  {%- if site.projects.size > 0 -%}
+  <div id="grid-projects">
+    <h2>Projects</h2>
+    <ul>
+      {%- for proj in site.projects -%}
+      <li>
+        <h3>
+          <a href="{{proj.url | relative_url }}">
+            {{ proj.title | escape }}
+          </a>
+        </h3>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+  {%- endif -%}
+</div>
