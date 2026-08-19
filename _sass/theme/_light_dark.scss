@@ -1,0 +1,22 @@
+@use 'light';
+@use 'dark';
+
+:root {
+  color-scheme: light dark;
+
+  --bg-color: light-dark(var(--light-bg), var(--dark-bg));
+  --text-color: light-dark(var(--light-text), var(--dark-text));
+  --header-color: light-dark(var(--light-header), var(--dark-header));
+
+  --color-primary: light-dark(var(--light-primary), var(--dark-primary));
+
+  --color-pd: light-dark(var(--light-pd), var(--dark-pd));
+  --color-pl: light-dark(var(--light-pl), var(--dark-pl));
+
+  --color-ps1: light-dark(var(--light-ps1), var(--dark-ps1));
+  --color-pt1: light-dark(var(--light-pt1), var(--dark-pt1));
+  --color-ps2: light-dark(var(--light-ps2), var(--dark-ps2));
+  --color-pt2: light-dark(var(--light-pt2), var(--dark-pt2));
+  --color-ps3: light-dark(var(--light-ps3), var(--dark-ps3));
+  --color-pt3: light-dark(var(--light-pt3), var(--dark-pt3));
+}
