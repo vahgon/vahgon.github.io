@@ -3,38 +3,46 @@
 .home {
   display: grid;
   height: 100%;
+  width: 100%;
 
-  grid-auto-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  justify-content: center;
-  gap: 10px;
+  grid-template-rows: 0.5fr 1fr 1.3fr;
+  grid-template-columns: 1fr 1fr 1fr;
   
-
   grid-template-areas:
-  "greet greet posts"
-  "greet greet posts"
+  "posts greet greet"
+  "posts sm sm"
   "proj proj proj";
+
+  gap: 1em;
 
   [id^="grid-"] {
     border-radius: .5rem;
   }
 }
 
+[id="social-media"] {
+  grid-area: sm;
+}
+
 [id="grid-greet"] {
-  padding-left: 5em;
-  padding-right: 5em;
   grid-area: greet;
 }
 
 [id="grid-posts"] {
-  display: inline-block;
   grid-area: posts;
+  min-height: 0;
+  background-color: black;
+  overflow-y: auto;
+  justify-content: center;
+  scrollbar-width: none;
 
-  > h2 {
-    padding-bottom: 10px;
+  ::-webkit-scrollbar {
+    display: none;
   }
+
 }
 
 [id="grid-projects"] {
   grid-area: proj;
+  margin-bottom: 2rem;
 }

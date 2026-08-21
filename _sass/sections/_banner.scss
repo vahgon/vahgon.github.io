@@ -1,5 +1,12 @@
 @use '../base/vars' as v;
 
+.grid [id="banner"] {
+  display: grid;
+  grid-area: banner;
+  justify-items: center;
+  margin-bottom: 5dvh;
+}
+
 .site-title {
   font: bold clamp(1.3rem, 2vw, 4.5rem) v.$font-base !important;
   text-transform: lowercase;
@@ -13,10 +20,11 @@
 
 .nav-list {
   display: flex;
+  flex: 0 0 auto;
   padding-top: max(0.8vw, 1rem);
   text-decoration: none;
   list-style: none;
-  font: 400 clamp(0.7rem, 1.2vw, 1.5rem) v.$font-base !important;
+  font: 400 clamp(0.7rem, 1dvw, 1.5rem) v.$font-base !important;
 
   :not(:last-child) {
     padding-right: 1vw;

@@ -11,7 +11,9 @@
 }
 
 body {
-  height: 100vh;
+  height: 100dvh;
+  padding-left: 20em;
+  padding-right: 20em;
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: vars.$font-base;
@@ -25,23 +27,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card {
-  position: relative;
-  background-color: var(--color-pd);
   display: flex;
-  flex-flow: column nowrap;
-  width: 20dvw;
-  height: 35vh;
+  background-color: var(--color-pd);
   border-radius: .5em;
-  padding: min(1.5em, 8%);
-
-  > div {
-    mix-blend-mode: difference;
-  }
 }
 
 .grid {
   display: grid;
   height: 100dvh;
+  width: 100dvw;
   grid-template-columns: 0.9fr;
   grid-template-rows: auto 2fr auto;
   justify-content: center;
@@ -50,20 +44,13 @@ h1, h2, h3, h4, h5, h6 {
   "page"
   "footer";
 
-  [id="banner"] {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    grid-area: banner;
-    justify-items: center;
-  }
-
   [id="page"] {
     grid-area: page;
+    min-height: 0;
+    min-width: 0;
   }
 
   [id="footer"] {
-    height: 5rem;
-    margin-bottom: 1rem;
     grid-area: footer;
   }
 }

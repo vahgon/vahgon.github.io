@@ -1,52 +1,85 @@
-.post-container {
+@use '../base/vars' as v;
+
+.post-teasers {
   display: flex;
-  position: relative;
-  width: 100%;
-  height: 100%;
+  flex: 1 1 auto;
   flex-flow: column nowrap;
-  gap: 10px;
+  min-height: 0;
+  align-items: center;
+}
+
+.post {
+  &-group {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    gap: 1em;
+    justify-self: center;
+
+    h2 {
+      position: sticky;
+      margin-right: auto;
+      margin-top: 1rem;
+    }
+
+    > hr {
+      height: 1px;
+      width: 45%;
+      color: white;
+      background: white;
+      font-size: 0;
+    }
+  }
 }
 
 .card.post {
-  position: relative;
-  font-size: clamp(0.5rem, 1rem, 1.5rem);
+  flex: 0 0 auto;
+  cursor: pointer;
+  flex-flow: column nowrap;
+  padding: 0.7em;
   width: 100%;
-  height: 4rem;
-  padding: 1.1rem;
-  transition: scale 150ms ease-in-out;
+  overflow: hidden;
 
-  h3 {
-    text-decoration: none;
-    margin: 0;
-    text-wrap: balance;
-    font-size: 0.9rem;
-    mix-blend-mode: plus-lighter;
+  .unfocused-info {
+    display: flex;
+    width: 100%;
+    align-items: center;
 
-    a {
-      text-decoration: none;
+    .post-title {
+      display: inline;
+      margin-right: auto;
+      text-transform: lowercase;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
     }
-  }
 
-  .date-published {
-    font-style: oblique;
-    font-size: 0.75em;
+    #date,
+    #duration {
+      padding-left: 1em;
+      white-space: nowrap;
+      display: inline;
+      font-style: oblique;
+      font-size: 0.75em;
+    }
   }
 
   .excerpt {
+    padding-top: 1em;
     font-size: 0.8rem;
     display: none;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     overflow: hidden;
-  }
-
-  &:hover {
-    height: fit-content;
-    position: absolute;
-
-    .excerpt {
-      display: -webkit-box;
-    }
+    text-overflow: ellipsis;
   }
 }
