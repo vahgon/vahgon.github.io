@@ -11,9 +11,6 @@
 }
 
 body {
-  height: 100dvh;
-  padding-left: 20em;
-  padding-right: 20em;
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: vars.$font-base;
@@ -21,14 +18,17 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--header-color);
+  color: var(--text-color);
   font-family: vars.$font-header;
   text-transform: uppercase;
 }
 
+header {
+  color: var(--header-color);
+}
+
 .card {
   display: flex;
-  background-color: var(--color-pd);
   border-radius: .5em;
 }
 
@@ -36,18 +36,18 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   height: 100dvh;
   width: 100dvw;
-  grid-template-columns: 0.9fr;
-  grid-template-rows: auto 2fr auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 2fr;
   justify-content: center;
   grid-template-areas:
   "banner"
-  "page"
-  "footer";
+  "page";
 
   [id="page"] {
     grid-area: page;
     min-height: 0;
     min-width: 0;
+    margin: 0 10em;
   }
 
   [id="footer"] {
