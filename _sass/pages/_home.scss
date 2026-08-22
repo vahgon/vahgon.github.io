@@ -5,18 +5,42 @@
   height: 100%;
   width: 100%;
 
-  grid-template-rows: 0.5fr 1fr 1.3fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.3fr auto 1fr;
+  grid-template-columns: .5fr 1fr .8fr;
   
   grid-template-areas:
-  "posts greet greet"
-  "posts sm sm"
+  "title posts greet"
+  "title posts greet"
   "proj proj proj";
 
   gap: 1em;
 
   [id^="grid-"] {
     border-radius: .5rem;
+  }
+}
+
+[id="grid-title"] {
+  grid-area: title;
+  justify-self: right;
+  margin-right: 2em;
+  align-self: center;
+  
+  header {
+    font-size: clamp(1rem, 10vw, 8rem);
+    text-transform: uppercase;
+    font-weight: 1000;
+    text-box-edge: cap alphabetic;
+
+    div {
+      display: flex;
+      padding: .1em;
+    }
+
+    span {
+      text-box-trim: trim-both;
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -29,17 +53,16 @@
 }
 
 [id="grid-posts"] {
+  grid: 1px solid white;
+  position: relative;
   grid-area: posts;
   min-height: 0;
-  background-color: black;
   overflow-y: auto;
-  justify-content: center;
   scrollbar-width: none;
 
   ::-webkit-scrollbar {
     display: none;
   }
-
 }
 
 [id="grid-projects"] {
