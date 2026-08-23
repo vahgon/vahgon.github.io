@@ -19,4 +19,14 @@
   --color-pt2: light-dark(var(--light-pt2), var(--dark-pt2));
   --color-ps3: light-dark(var(--light-ps3), var(--dark-ps3));
   --color-pt3: light-dark(var(--light-pt3), var(--dark-pt3));
+
+  --lang-c: #659ad2;
+  --lang-cpp: #00599c;
+  --lang-rust: #f66200;
+  --lang-jekyll: #d60000;
+  --lang-vulkan: #a41e22;
+  --lang-sass: #cc6699;
+  --lang-html: #e34f26;
+  --lang-python: #376f9f;
+  --lang-js: #fbde34;
 }
