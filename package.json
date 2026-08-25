@@ -1,0 +1,28 @@
+{
+  "name": "vah-jekyll-site",
+  "version": "1.0.0",
+  "description": "jekyll site",
+  "keywords": [
+    "jekyll"
+  ],
+  "scripts": {
+    "bundle": "yarn node ./scripts/build.mjs"
+  },
+  "homepage": "https://github.com/vahgon/vahgon.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/vahgon/vahgon.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vahgon/vahgon.github.io.git"
+  },
+  "license": "MIT",
+  "author": "vahgon",
+  "dependencies": {
+    "gulp": "^5.0.1",
+    "three.js": "^0.77.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

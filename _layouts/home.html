@@ -1,76 +1,23 @@
 ---
 layout: default
 ---
-<div class="home">
+<div class="home-container">
+  <header class="site-title">
+    <span>VAH</span>
+    <span>GON</span>
+    <span>DEV</span>
+  </header>
+  <div aria-hidden="true" id="title-graphic"></div>
 
-  <div id="grid-title">
-    <header>
-    <div>
-      <span>v</span>
-      <span>a</span>
-      <span>h</span>
-    </div>
+  <nav class="site-nav">
+    <span aria-hidden="true" class="nav-separator"></span>
+    <a href="{{ "/about" | relative_url }}">about</a>
+    <span aria-hidden="true" class="nav-separator"></span>
+    <a href="{{ "/posts" | relative_url }}">posts</a>
+    <span aria-hidden="true" class="nav-separator"></span>
+    <a href="{{ "/projects" | relative_url }}">projects</a>
+    <span aria-hidden="true" class="nav-separator"></span>
+  </nav>
+  <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
 
-    <div>
-      <span>g</span>
-      <span>o</span>
-      <span>n</span>
-    </div>
-
-    <div>
-      <span>d</span>
-      <span>e</span>
-      <span>v</span>
-    </div>
-    </header>
-  </div>
-
-<div id="grid-greet">{{ content }}</div>
-
-  {%- if site.posts.size > 0 -%}
-  <div id="grid-posts">
-
-    <div class="post-teasers">
-          <h2>Recent Posts</h2>
-
-        <div class="post-group">
-          {%- for post in site.posts limit: 10 -%}
-          <div class="card post">
-
-            <div class="unfocused-info">
-              <h3 class="post-title">
-                <a href="{{ post.url | relative_url }}">{{ post.title | downcase }}</a>
-              </h3>
-
-              {%- assign date_format = "%b %-d, %Y" -%}
-              <time class="post-date" id="date">{{ post.date | date: date_format }}</time>
-            </div>
-
-            <div class="excerpt"><p>{{ post.excerpt | strip_html }}</p></div>
-
-          </div>
-          {%- unless forloop.last -%}
-          {%- endunless -%}
-
-          {%- endfor -%}
-        </div>
-      </div>
-
-    </div>
-    {%- endif -%}
-
-    {%- if site.projects.size > 0 -%}
-    {%- endif -%}
-
-  <script>
-    document.querySelectorAll(".card").forEach((card) => {
-      const link = card.querySelector("a");
-      link.addEventListener("click", (e) => e.stopPropagation());
-
-      card.addEventListener("click", () => {
-        if (!window.getSelection().toString()) {
-          link.click();}
-      });
-    });
-  </script>
 </div>
