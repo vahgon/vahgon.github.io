@@ -4,11 +4,11 @@
 :root {
   color-scheme: light dark;
 
-  --bg-color: light-dark(var(--light-bg), var(--dark-bg));
+  --bg-color: light-dark(var(--light-primary), var(--dark-bg));
   --text-color: light-dark(var(--light-text), var(--dark-text));
   --header-color: light-dark(var(--light-header), var(--dark-header));
 
-  --color-primary: light-dark(var(--light-primary), var(--dark-primary));
+  --important-text: light-dark(var(--dark-pd), var(--dark-pt3));
 
   --color-pd: light-dark(var(--light-pd), var(--dark-pd));
   --color-pl: light-dark(var(--light-pl), var(--dark-pl));
@@ -29,4 +29,8 @@
   --lang-html: #e34f26;
   --lang-python: #376f9f;
   --lang-js: #fbde34;
+
+  --error: #ff0f0f;
+  --warning: #ffef3e;
+  --info: #5ce65c;
 }
