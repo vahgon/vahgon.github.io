@@ -1,23 +1,19 @@
 <header role="banner" id="banner">
-  <h1 class="site-title">
-    <a href="{{ "/" | relative_url }}">{{ site.title | lowcase }}</a>
-  </h1>
 
-  <nav>
-    <ol class="nav-list">
-
-      <li>
-        <a href="{{ "/about" | relative_url }}">about</a>
-      </li>
-
-      <li>
-        <a href="{{ "/posts" | relative_url }}">posts</a>
-      </li>
-
-      <li>
-        <a href="{{ "/projects" | relative_url }}">projects</a>
-      </li>
-
-    </ol>
+  <nav class="nav-list">
+    <li>
+      <a href="{{ "/about" | relative_url }}">about</a>
+    </li>
+    <li>
+      <a href="{{ "/posts" | relative_url }}">posts</a>
+    </li>
+    <li>
+      <a href="{{ "/projects" | relative_url }}">projects</a>
+    </li>
   </nav>
+
+  <div class="head-divide"></div>
+
+    <!-- <a href="{{ "/" | relative_url }}">{{ site.title | lowcase }}</a> -->
+
 </header>

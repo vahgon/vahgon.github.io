@@ -2,36 +2,43 @@
 
 .grid [id="banner"] {
   display: grid;
+  position: sticky;
+  top: 0;
   grid-area: banner;
-  justify-items: center;
-  margin-bottom: 5dvh;
-}
+  margin-bottom: 3em;
 
-.site-title {
-  font: bold clamp(1.3rem, 2vw, 4.5rem) v.$font-base !important;
-  text-transform: lowercase;
-  letter-spacing: 0.8rem; 
+  background: linear-gradient(0deg, transparent , var(--bg-color) );
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .nav-list {
   display: flex;
   flex: 0 0 auto;
-  padding-top: max(0.8vw, 1rem);
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  justify-self: center;
+  color: var(--important-text);
+
   text-decoration: none;
   list-style: none;
   font: 400 clamp(0.7rem, 1dvw, 1.5rem) v.$font-base !important;
 
   :not(:last-child) {
-    padding-right: 1vw;
+    padding-right: 3vw;
   }
 
   li > a {
     text-decoration: none;
     color: inherit;
   }
+}
+
+.head-divide {
+  width: 100%;
+  background-image:
+  linear-gradient(to right, transparent, var(--important-text), transparent);
+  content: '';
+  height: 1px;
 }
