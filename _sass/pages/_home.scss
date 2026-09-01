@@ -1,73 +1,73 @@
-.home-container {
-  display: grid;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: .8fr 1fr;
-  grid-template-areas:
-  "intro intro"
-  "nav nav";
-}
-
-[id="title-graphic"] {
-  overflow: visible;
-  background-color: transparent;
-  grid-area: intro;
-  display: flex;
-  padding-top: 2em;
-  flex: 0 0 auto;
-  justify-self: center;
-  align-self: center;
-  width: 90%;
-  height: 90%;
-  z-index: -1;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --blend-mode: difference;
   }
 }
+
 @media (prefers-color-scheme: light) {
   :root {
     --blend-mode: color;
   }
 }
 
+.home-container {
+  justify-content: center;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-flow: column nowrap;
+  padding-bottom: 20em;
+  width: 100%;
+  height: 100%;
+}
+
 .site-title {
-  z-index: 1;
-  color: var(--dark-pt3);
-  grid-area: intro;
-  align-self: self-end;
+  display: flex;
+  color: var(--important-text);
+  align-self: center;
   justify-self: center;
   margin-top: 1em;
   margin-bottom: calc(var(--spacing) * 10);
   display: flex;
   flex-flow: column nowrap;
-  font-size: clamp(7rem, 10vw, 8rem);
+  font-size: clamp(5rem, 10vw, 20rem);
   text-transform: uppercase;
   font-weight: 1000;
-  text-box-edge: cap alphabetic;
   gap: 1rem;
   animation: 5s infinite alternate glow;
   mix-blend-mode: var(--blend-mode);
+  anchor-name: --title-anchor;
 
   span {
     line-height: 60%;
   }
 }
 
+[id="title-graphic"] {
+  position: absolute;
+  position-anchor: --title-anchor;
+  position-area: center;
+  display: flex;
+  flex: 0 0 auto;
+  width: 100%;
+  background-color: transparent;
+  height: 100%;
+  z-index: 0;
+
+  > canvas {
+    background-color: transparent;
+  }
+}
+
 .site-nav {
   grid-area: nav;
   display: flex;
-  height: fit-content;
-  justify-self: center;
-  flex-flow: row nowrap;
+  color: var(--important-text);
+  align-self: center;
+  font-size: clamp(1rem, calc(.01rem + 1vw), 6rem);
 
   .nav-separator {
     display: inline;
-    background-color: var(--header-color);
+    background-color: var(--important-text);
     align-self: center;
     width: calc(var(--spacing) * 5);
     height: 1px;
