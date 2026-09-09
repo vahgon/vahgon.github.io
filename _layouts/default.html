@@ -5,10 +5,12 @@
   </head>
 
   <body class="grid">
-
     {%- include banner.html -%}
 
     <main id="page">{{ content }}</main>
 
+    {%- if page.layout != "home" -%}
+      {%- include footer.html -%}
+    {%- endif -%}
   </body>
 </html>
