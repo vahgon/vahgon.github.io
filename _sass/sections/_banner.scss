@@ -1,44 +1,57 @@
 @use '../base/vars' as v;
 
 .grid [id="banner"] {
-  display: grid;
   position: sticky;
-  top: 0;
+  display: grid;
   grid-area: banner;
-  margin-bottom: 3em;
-
+  margin-bottom: clamp(1rem,  5vw + .25rem, 5rem);
+  color: var(--important-text);
   background: linear-gradient(0deg, transparent , var(--bg-color) );
-
-  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+.banner-content {
+  display: flex;
+  width: min(88%, 50rem);
+  margin-top: calc(var(--spacing) * 6);
+  margin-bottom: calc(var(--spacing) * 4);
+  justify-self: center;
+
+  .title {
+    font-family: var(--code-font);
+    font-size: clamp(1rem, 1vw + .25rem, 1.5rem);
+    font-weight: 600;
+    color: inherit;
+
+    a {
+      text-decoration: none;
+    }
+  }
 }
 
 .nav-list {
+  margin-left: auto;
   display: flex;
   flex: 0 0 auto;
-  margin-top: 1.5em;
-  margin-bottom: 1em;
-  justify-self: center;
-  color: var(--important-text);
-
-  text-decoration: none;
   list-style: none;
-  font: 400 clamp(0.7rem, 1dvw, 1.5rem) v.$font-base !important;
+  font-size: clamp(0.8rem, 0.6vw + .25rem, 1.1rem);
+  align-self: center;
 
   :not(:last-child) {
-    padding-right: 3vw;
+    margin-right: calc(var(--spacing) * 5);
   }
 
   li > a {
     text-decoration: none;
+    font-style: italic;
     color: inherit;
   }
 }
 
 .head-divide {
-  width: 100%;
   background-image:
-  linear-gradient(to right, transparent, var(--important-text), transparent);
-  content: '';
+    linear-gradient(to right, transparent, var(--important-text), transparent);
   height: 1px;
 }
