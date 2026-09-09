@@ -1,5 +1,9 @@
 @use '../base/vars' as v;
 
+.site-posts {
+  display: flex;
+}
+
 .post-teasers {
   display: flex;
   flex: 1 1 auto;
