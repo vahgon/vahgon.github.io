@@ -1,37 +1,65 @@
-import { WebGLRenderer, PerspectiveCamera, Color, Scene, HemisphereLight, BoxGeometry, MeshStandardMaterial, Mesh } from 'three';
+import { MeshBasicMaterial, WebGLRenderer, Color, PerspectiveCamera, Scene, HemisphereLight, BoxGeometry, Mesh } from 'three';
 
+const renderer = new WebGLRenderer({ antialias: true, alpha: true });
 const container = document.getElementById("title-graphic");
-const w  = container.offsetWidth;
+
+const w = container.offsetWidth;
 const h = container.offsetHeight;
 
-const renderer = new WebGLRenderer({ antialias: true, alpha: true, premultipliedAlpha: true });
-renderer.domElement.style.background = 'transparent';
-renderer.setSize(w, h);
-container.appendChild(renderer.domElement);
-
-const fov = 75;
+const fov = 70;
 const aspect = w / h;
 const near = 0.1;
 const far = 10;
 
-const camera = new PerspectiveCamera(fov, aspect, near, far);
-camera.position.z = 2;
+renderer.setSize(w, h);
 
-const scene = new Scene();
-scene.background = new Color( 0x000000 );
+const camera = new PerspectiveCamera(fov, aspect, near, far);
+
+renderer.setSize(w, h);
+
+container.appendChild(renderer.domElement);
 
 const hlight = new HemisphereLight(
   0xffffff,
   0xff000f,
-  2
+  1
 );
 
-const geometry = new BoxGeometry( 1, 1, 1 );
-const material = new MeshStandardMaterial( { color: 0x00ffff } );
-const cube = new Mesh( geometry, material );
 
-scene.add( cube );
+
+const darkModeMql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+
+var objColor;
+
+if (darkModeMql && darkModeMql.matches) {
+  objColor = new Color(0x839bf3);
+} else {
+  objColor = new Color(0x9d00ab);
+}
+
+const mesh = new Mesh(
+  new BoxGeometry(1.1, 1.1, 1.1),
+  new MeshBasicMaterial({
+    color: objColor,
+  })
+);
+
+const scene = new Scene();
+
 scene.add(hlight);
+scene.add(mesh);
+
+camera.position.z = 2;
+
+(window.matchMedia('(prefers-color-scheme: dark)') || window.matchMedia('(prefers-color-scheme: light)')).addEventListener('change', e => {
+  const newScheme = e.matches ? "dark" : "light";
+
+  if (newScheme == 'dark') {
+    mesh.material.color.set(0x839bf3);
+  } else {
+    mesh.material.color.set(0x9d00ab);
+  }
+})
 
 window.addEventListener('resize', () => {
   const newW = container.offsetWidth;
@@ -44,9 +72,9 @@ window.addEventListener('resize', () => {
 
 function animate(t = 0) {
   requestAnimationFrame(animate);
-  cube.rotation.y = t * 0.0001;
-  cube.rotation.x = t * 0.0002;
+  mesh.rotation.y = t * 0.0001;
+  mesh.rotation.x = t * 0.0002;
   renderer.render(scene, camera);
 }
-animate();
 
+animate();
