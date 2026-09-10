@@ -1,28 +1,27 @@
 .home-container {
-  justify-content: center;
-  overflow: visible;
-  background-color: var(--bg-color);
   display: flex;
   flex-flow: column nowrap;
-  margin-top: clamp(.1rem, .5vw + .25rem, 3rem);
+  overflow: visible;
+  background-color: var(--color-bg);
+  margin-bottom: 10rem;
 }
 
 .site-title {
-  user-select: none;
   display: flex;
   flex-flow: column nowrap;
+  margin-bottom: 3rem;
+  gap: 1rem;
   align-self: center;
-  justify-content: center;
-  color: var(--important-text);
+  anchor-name: --title-anchor;
   text-transform: uppercase;
   font-weight: 1000;
-  gap: 1rem;
-  animation: 5s infinite alternate glow;
+  color: var(--color-primary);
   mix-blend-mode: var(--blend-mode);
-  anchor-name: --title-anchor;
+  user-select: none;
+  animation: 5s infinite alternate glow;
 
   span {
-    font-size: clamp(8rem, 15vw + .25rem, 15rem) !important;
+    font-size: clamp(8rem, 10vh + 5rem, 20rem) !important;
     line-height: 62%;
   }
 }
@@ -31,11 +30,11 @@
   position: absolute;
   position-anchor: --title-anchor;
   position-area: center;
-  display: flex;
   flex: 0 0 auto;
+  display: flex;
   width: 100%;
-  background-color: transparent;
   height: 100%;
+  background-color: transparent;
   z-index: 0;
 
   canvas {
@@ -44,20 +43,34 @@
 }
 
 .site-nav {
-  margin-top: clamp(8%,  .25rem + 1vw, 10rem);
+  margin-bottom: clamp(2rem, 1vw + .25rem, 3rem);
   grid-area: nav;
   display: flex;
-  color: var(--important-text);
+  color: var(--color-primary);
   align-self: center;
+  align-items: center;
   font-size: clamp(1rem, 1vw + .25rem, 5rem);
   z-index: 1;
+
+  .home-icon {
+    display: flex;
+    height: clamp(15px, 1vh + 2em, 300px);
+
+    [id="github"] {
+      fill: var(--color-primary);
+    }
+
+    [id="linkedin"] {
+      fill: var(--color-primary);
+    }
+  }
 
   .nav-separator {
     display: inline;
     background:
-      color-mix(in srgb, var(--important-text) 75%, transparent 30%);
+      color-mix(in srgb, var(--color-primary) 75%, transparent 30%);
     align-self: center;
-    width: clamp(.75rem, calc(var(--spacing) * 3) + 1vw, 5rem);
+    width: clamp(.5rem, 1rem + .5vw, 3rem);
     height: 2px;
     border-radius: 20px;
   }
@@ -73,13 +86,13 @@
 @keyframes glow {
   0% {
   text-shadow:
-    0 0 0.5em rgb(from var(--header-color) r g b / 0.1),
-    0 0 0.2em rgb(from var(--header-color) r g b / 0.2);
+    0 0 0.5em rgb(from var(--color-primary) r g b / 0.1),
+    0 0 0.2em rgb(from var(--color-primary) r g b / 0.2);
 
   } 100% {
   text-shadow:
-    0 0 0.5em rgb(from var(--header-color) r g b / 0.2),
-    0 0 0.2em rgb(from var(--header-color) r g b / 0.3);
+    0 0 0.8em rgb(from var(--color-primary) r g b / 0.2),
+    0 0 0.3em rgb(from var(--color-primary) r g b / 0.3);
   }
 }
 
