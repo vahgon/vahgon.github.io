@@ -7,7 +7,7 @@
   <body class="grid">
     {%- include banner.html -%}
 
-    <main id="page">{{ content }}</main>
+    <main id="page" style={%- if page.layout =="home" -%}"align-content: center"{%- endif -%}>{{ content }}</main>
 
     {%- if page.layout != "home" -%}
       {%- include footer.html -%}
