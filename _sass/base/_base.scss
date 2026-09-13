@@ -48,11 +48,6 @@ h2 {
   margin-bottom: calc(var(--spacing) * 3);
 }
 
-.card {
-  display: flex;
-  border-radius: .5em;
-}
-
 .grid {
   display: grid;
   grid-template-columns: 1fr;
