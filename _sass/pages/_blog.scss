@@ -1,0 +1,84 @@
+.site-posts {
+  display: flex;
+  margin-top: 3rem;
+  flex-flow: column nowrap;
+
+  h2 {
+    display: flex;
+    margin: 0;
+  }
+
+  .post-list {
+    > :not(:first-child) {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+.post-list {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+
+  h4 {
+    all: unset;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(.8rem, 1vw + .1rem, 2rem);
+    font-weight: 600;
+  }
+
+
+  .post-teaser {
+    min-width: 0;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    height: fit-content;
+    border: 1px solid;
+    border-color: var(--color-emphasis);
+    border-radius: 7px;
+    padding: calc(var(--spacing));
+    background-color: var(--color-emphasis);
+
+    a {
+      text-decoration: none;
+      
+      &:link {
+        color: var(--color-text);
+      }
+
+      &:visited {
+        color: var(--color-text);
+      }
+    }
+
+    .post-info {
+      display: flex;
+      flex-flow: row nowrap;
+      margin: 0;
+
+      time {
+        display: flex;
+        margin: 0;
+        margin-right: auto;
+        position: relative;
+        font-size: .8rem;
+        color: var(--color-primary);
+      }
+
+      .ttr {
+        width: fit-content;
+        display: flex;
+
+        :first-child {
+          font-family: var(--base-font);
+          font-style: oblique;
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+}
