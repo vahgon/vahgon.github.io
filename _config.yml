@@ -48,4 +48,3 @@ exclude:
   - package.json
   - gulpfile.js
   - yarn.lock
-  
