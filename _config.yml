@@ -10,6 +10,8 @@ linkedin_uname: mullins-ian
 
 email_str: ian [at] vahgon (dot) dev
 
+current_year: 2026
+
 highlighter: none
 kramdown:
   syntax_highlighter: null

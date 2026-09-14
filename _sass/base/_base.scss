@@ -63,6 +63,7 @@ h2 {
     grid-area: page;
     justify-self: center;
     width: 98%;
+    min-width: 0;
     max-width: clamp(40rem, 20vw + 20rem, 80rem);
     height: 100%;
   }

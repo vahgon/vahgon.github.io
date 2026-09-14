@@ -1,20 +1,16 @@
 <header role="banner" id="banner">
-
   <div class="banner-content">
     <div class="title">
       <a href="{{ "/" | relative_url }}">{{ site.title }}</a>
     </div>
-
     <nav class="nav-list">
       <li>
-        <a href="{{ "/posts" | relative_url }}">posts</a>
+        <a{% if page.title == "Blog" or page.url contains "/blog/" %} class="curr-page" {% endif %} href="{{ "/blog" | relative_url }}">blog</a>
       </li>
       <li>
-        <a href="{{ "/projects" | relative_url }}">projects</a>
+        <a {% if page.title == "Projects" or page.url contains "/projects/" %} class="curr-page" {% endif %} href="{{ "/projects" | relative_url }}">projects</a>
       </li>
     </nav>
-
   </div>
-
   <div aria-hidden="true" class="head-divide"></div>
 </header>

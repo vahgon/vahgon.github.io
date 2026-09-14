@@ -1,3 +1,8 @@
+@use 'sass:map';
+@use 'sass:string';
+
+@use 'vars' as v;
+
 @mixin clearfix {
   &::after {
     content: "";
@@ -6,3 +11,43 @@
   }
 }
 
+@mixin for-size($breakpoint, $dir: down) {
+  @if map.has-key(v.$breakpoints, $breakpoint) {
+    $breakpoint-val: map.get(v.$breakpoints, $breakpoint);
+
+    @if $dir == up {
+      @media (min-width: $breakpoint-val) {
+        @content;
+      }
+    }
+    @else if $dir == down {
+      @media (max-width: $breakpoint-val) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin base-grid($colnum, $colsize,
+                 $rownum, $rowsize,
+                 $col-rhs: '', $row-rhs: '') {
+  @for $i from 1 to $colnum + 1 {
+    $col-rhs: $col-rhs + $colsize;
+
+    @if $i != $colnum {
+      $col-rhs: $col-rhs + ' ';
+    }
+  }
+
+  @for $i from 1 to $rownum + 1 {
+    $row-rhs: $row-rhs + $rowsize;
+
+    @if $i != $rownum {
+      $row-rhs: $row-rhs + ' ';
+    }
+  }
+  display: grid;
+
+  grid-template-columns: string.unquote($col-rhs);
+  grid-template-rows: string.unquote($row-rhs);
+}

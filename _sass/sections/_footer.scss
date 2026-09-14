@@ -1,0 +1,78 @@
+[id="footer"] {
+  height: 2rem;
+  width: 100%;
+  align-content: center;
+
+  :first-child {
+    width: 75%;
+    margin: auto;
+  }
+}
+
+.footer-icon {
+  display: flex;
+  height: clamp(15px, 1vh + 1em, 300px);
+  padding-right: .25rem;
+
+  [id="github"] {
+    fill: var(--color-text);
+  }
+
+  [id="linkedin"] {
+    fill: var(--color-text);
+  }
+}
+
+.cc {
+  text-align: center;
+  font-size: clamp(.6rem, .6vw + .25rem, .9rem);
+  letter-spacing: -.1em;
+
+  :not(strong) {
+    font-size: clamp(.5rem, .5vw + .25rem, .8rem);
+    font-weight: 400;
+    color: color-mix(in srgb, currentColor, transparent 20%);
+  }
+}
+
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .section {
+    display: flex;
+    letter-spacing: -.1vw;
+    font-size: clamp(.6rem, 1vw + .3rem, .9rem);
+
+    &.email {
+      width: fit-content;
+    }
+
+    &.socials {
+      flex-flow: column nowrap;
+      list-style: none;
+      width: fit-content;
+
+      li:not(:last-child) {
+        margin-bottom: .8rem;
+      }
+
+      .info-container {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+
+        :visited {
+          color: inherit;
+        }
+
+        :link {
+          color: inherit;
+        }
+      }
+    }
+  }
+}

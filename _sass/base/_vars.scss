@@ -3,7 +3,7 @@
 @use 'sass:map';
 
 $font-base: 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace !default;
-$font-header: 'Roboto Condenced', $font-base;
+$font-header: 'Roboto Condenced', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace !default;
 $font-code: 'Fira Code', 'Cascadia Code', 'Source Code Pro', monospace !default;
 
 $breakpoints: (
@@ -13,3 +13,5 @@ $breakpoints: (
   xl: 80rem,
   xxl: 96rem
 );
+
+$spacing: .25rem;

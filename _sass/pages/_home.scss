@@ -52,23 +52,10 @@
   font-size: clamp(1rem, 1vw + .25rem, 5rem);
   z-index: 1;
 
-  .home-icon {
-    display: flex;
-    height: clamp(15px, 1vh + 2em, 300px);
-
-    [id="github"] {
-      fill: var(--color-primary);
-    }
-
-    [id="linkedin"] {
-      fill: var(--color-primary);
-    }
-  }
-
   .nav-separator {
     display: inline;
     background:
-      color-mix(in srgb, var(--color-primary) 75%, transparent 30%);
+      color-mix(in srgb, var(--color-secondary) 75%, transparent 30%);
     align-self: center;
     width: clamp(.5rem, 1rem + .5vw, 3rem);
     height: 2px;
@@ -81,18 +68,36 @@
     text-decoration: none;
     color: inherit;
   }
+
+  .home-icon {
+    display: flex;
+    height: clamp(15px, 1vh + 2em, 300px);
+    transition: transform .5s, filter .5s;
+
+    [id="github"] {
+      fill: var(--color-primary);
+    }
+
+    [id="linkedin"] {
+      fill: var(--color-primary);
+    }
+
+    &:hover {
+      transform: translateY(-5px) scale(1.1);
+      filter: drop-shadow(0rem 0rem .3rem rgb(from var(--color-secondary) r g b / .5));
+    }
+  }
 }
 
 @keyframes glow {
   0% {
   text-shadow:
-    0 0 0.5em rgb(from var(--color-primary) r g b / 0.1),
-    0 0 0.2em rgb(from var(--color-primary) r g b / 0.2);
+    0 0 0.3rem rgb(from var(--color-secondary) r g b / 0.5);
 
   } 100% {
   text-shadow:
-    0 0 0.8em rgb(from var(--color-primary) r g b / 0.2),
-    0 0 0.3em rgb(from var(--color-primary) r g b / 0.3);
+    0 0 0.3rem rgb(from var(--color-secondary) r g b / 0.6),
+    0 0 0.7rem rgb(from var(--color-secondary) r g b / 0.6);
   }
 }
 

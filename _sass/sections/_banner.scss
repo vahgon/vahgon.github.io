@@ -4,15 +4,16 @@
   position: sticky;
   display: grid;
   grid-area: banner;
-  margin-bottom: clamp(1rem,  5vw + .25rem, 5rem);
-  color: var(--important-text);
-  background: linear-gradient(0deg, transparent , var(--bg-color) );
+  top: 0;
+  color: var(--color-primary);
+  background: linear-gradient(0deg, transparent 0%, var(--color-bg) 100%);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   z-index: 999;
 }
 
 .banner-content {
+  position: relative;
   display: flex;
   width: min(88%, 50rem);
   margin-top: calc(var(--spacing) * 6);
@@ -27,6 +28,7 @@
 
     a {
       text-decoration: none;
+      color: inherit;
     }
   }
 }
@@ -48,10 +50,15 @@
     font-style: italic;
     color: inherit;
   }
+
+  .curr-page {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
 }
 
 .head-divide {
   background-image:
-    linear-gradient(to right, transparent, var(--important-text), transparent);
+    linear-gradient(to right, transparent, var(--color-primary), transparent);
   height: 1px;
 }
