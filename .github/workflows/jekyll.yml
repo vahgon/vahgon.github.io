@@ -48,11 +48,16 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+        uses: actions/upload-pages-artifact@v3
+      - name: setup dependencies
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+      - name: install dependencies
+        run: yarn install --frozen-lockfile
       - name: style code snippets
         run: yarn run highlight
-      - name: Upload artifact
-        # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v3
 
   # Deployment job
   deploy:
@@ -65,3 +70,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
