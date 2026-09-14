@@ -4,9 +4,11 @@
 :root {
   color-scheme: light dark;
 
-  --color-bg: light-dark(var(--light-primary), var(--dark-bg));
+  --color-bg: light-dark(var(--light-bg), var(--dark-bg));
   --color-text: light-dark(var(--light-text), var(--dark-text));
   --color-header: light-dark(var(--light-header), var(--dark-header));
+
+  --color-emphasis: light-dark(var(--light-emphasis), var(--dark-emphasis));
 
   --color-primary: light-dark(var(--light-primary), var(--dark-primary));
   --color-secondary: light-dark(var(--light-secondary), var(--dark-secondary));
