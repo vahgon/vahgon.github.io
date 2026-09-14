@@ -1,9 +1,9 @@
 .blog-post {
-  margin: 0 15dvw;
-  anchor-name: --post-container;
+  display: flex;
+  flex-flow: column nowrap;
 
   p {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
   }
 
   h2 {
@@ -15,29 +15,38 @@
   flex-flow: column nowrap;
   margin-bottom: calc(var(--spacing) * 6);
 
+  h1 {
+    width: fit-content;
+    margin-top: 3rem;
+  }
+
   time {
     margin-top: calc(var(--spacing) * 2);
     align-content: center;
     position: relative;
     font-size: .8rem;
-    color: var(--important-text);
-  }
-
-  .time-to-read {
-    font-size: .8rem;
-    align-content: center;
+    color: var(--color-primary);
   }
 }
 
 // shiki code block
 pre {
-  margin: 2rem 2em;
+  margin-top: min(95%, 2rem);
+  margin-bottom: min(95%, 2rem);
   padding: 1em;
   border: 1px solid light-dark(var(--shiki-light-bg), var(--shiki-dark-bg));
   border-radius: 8px;
+  overflow-x: scroll;
 }
 
 code {
-  font-size: clamp(.5rem, 1vw, 4rem) !important;
+  font-size: clamp(.8rem, 1vw + .25rem, .9rem) !important;
   font-family: var(--code-font) !important;
+  line-height: 1.5rem;
+}
+
+@media screen and (max-width: 657px) {
+  .blog-post {
+    margin: 0 2rem;
+  }
 }
