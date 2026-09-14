@@ -1,19 +1,20 @@
 title: vahgon.dev
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: ""
 url: "https://vahgon.dev"
+baseurl: ""
 
-twitter_username: vahgonn
-github_username:  vahgon
-email_print: ian [at] vahgon (dot) dev
-linkedin_username: mullins-ian
+description: vahgon.dev
 
-highlighter: rouge
+twitter_uname: vahgonn
+github_uname:  vahgon
+linkedin_uname: mullins-ian
 
-ignore_theme_config: BOOL
+email_str: ian [at] vahgon (dot) dev
+
+current_year: 2026
+
+highlighter: none
+kramdown:
+  syntax_highlighter: null
 
 sass:
   sass_dir: _sass
@@ -22,15 +23,16 @@ sass:
 collections:
   posts:
     output: true
-    permalink: /:collection/:name
+    permalink: /:categories/:title
   projects:
     output: true
     permalink: /:collection/:name
 
+ignore_theme_config: true
+
 # Build settings
 plugins:
   - jekyll-feed
-  - jekyll-avatar
   - jekyll-seo-tag
   - jekyll-sitemap
 
@@ -42,3 +44,7 @@ exclude:
   - "*.gem"
   - Gemfile
   - Gemfile.lock
+  - scripts
+  - package.json
+  - gulpfile.js
+  - yarn.lock

@@ -1,0 +1,37 @@
+.site-projects {
+  display: flex;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.site-projects-info {
+  display: flex;
+  width: 100%;
+
+  h2 {
+    display: block;
+    margin: 0;
+  }
+}
+
+
+
+[id="c++"] {
+  border-color: var(--lang-cpp);
+  background-color: rgb(from var(--lang-cpp) r g b / 25%);
+}
+
+[id="vulkan"] {
+  border-color: var(--lang-vulkan);
+  background-color: rgb(from var(--lang-vulkan) r g b / 25%);
+}
+
+[id="sass"] {
+  border-color: var(--lang-sass);
+  background-color: rgb(from var(--lang-sass) r g b / 25%);
+}
+
+[id="jekyll"] {
+  border-color: var(--lang-jekyll);
+  background-color: rgb(from var(--lang-jekyll) r g b / 25%);
+}

@@ -1,59 +1,52 @@
-.post {
+.blog-post {
   display: flex;
-  flex-direction: column;
-  flex: 2 0 auto;
-  order: 2;
-  max-width: 35%;
+  flex-flow: column nowrap;
 
-  p:first-child {
-    margin-top: 0.5em;
+  p {
+    margin-bottom: 1rem;
+  }
+
+  h2 {
   }
 }
 
-.post-header {
+.post-info {
   display: flex;
-  flex-direction: column;
-  width: fit-content;
+  flex-flow: column nowrap;
+  margin-bottom: calc(var(--spacing) * 6);
 
   h1 {
-    font-family: $font-header;
-    font-size: $font-size-title;
-    font-weight: $font-weight-header;
     width: fit-content;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 3rem;
   }
 
   time {
-    @include lighten-color($color-ptext);
-    font-size: 11px;
-    width: fit-content;
-    font-style: italic;
+    margin-top: calc(var(--spacing) * 2);
+    align-content: center;
+    position: relative;
+    font-size: .8rem;
+    color: var(--color-primary);
   }
 }
 
-.post-content {
-  display: flex;
-  flex-direction: column;
+// shiki code block
+pre {
+  margin-top: min(95%, 2rem);
+  margin-bottom: min(95%, 2rem);
+  padding: 1em;
+  border: 1px solid light-dark(var(--shiki-light-bg), var(--shiki-dark-bg));
+  border-radius: 8px;
+  overflow-x: scroll;
+}
 
-  h2 {
-    font-family: $font-header;
-    font-size: $font-size-header;
-    font-weight: $font-weight-header;
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
+code {
+  font-size: clamp(.8rem, 1vw + .25rem, .9rem) !important;
+  font-family: var(--code-font) !important;
+  line-height: 1.5rem;
+}
 
-    p:first-child{
-      margin-bottom: 0;
-    }
+@media screen and (max-width: 657px) {
+  .blog-post {
+    margin: 0 2rem;
   }
 }
-
-.hidden {
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-  order: 3;
-  visibility: hidden;
-}
-

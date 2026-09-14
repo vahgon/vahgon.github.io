@@ -1,5 +1,10 @@
-{% assign words = content | number_of_words %}
-{% assign minutes = words | divided_by: 180 | ceil %}
+{%- if include.words > 0 -%}
+{%- assign minutes = include.words | divided_by: 180 | ceil -%}
 
-{% include icons.html icon="clock" %}
-<div class="reading-duration" itemprop="timeRequired" itemscope itemtype="http://schema.org/CreativeWork" content="PT{{ minutes }}M"> {{ minutes }} </div>
+{%- if minutes == 0 -%}
+<div itemprop="timeRequired" itemscope itemtype="http://schema.org/CreativeWork" content="PT{{ minutes }}M"> &gt1 min</div>
+{%- else -%}
+<div itemprop="timeRequired" itemscope itemtype="http://schema.org/CreativeWork" content="PT{{ minutes }}M"> {{ minutes }} mins</div>
+{%- endif -%}
+
+{%- endif -%}

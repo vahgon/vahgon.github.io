@@ -1,0 +1,122 @@
+.project-windows {
+  display: flex;
+  flex-flow: row nowrap;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  width: 75%;
+  gap: 2em;
+  padding: 3em 3px 0 3px;
+}
+
+
+.os-window {
+  position: relative;
+  flex: 0 0 calc((100% - (2 * 2em)) / 3);
+  height: max-content;
+  border: 1px solid var(--color-header);
+  border-radius: .75rem;
+  background-color: var(--color-header);
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: transform 1s scale 1s ease-in;
+
+  &:hover {
+    transform: translateY(-.3em);
+    scale: 1.03;
+  }
+
+  .content {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .title-bar {
+    height: calc(var(--spacing) * 7);
+    background-color: rgb(from var(--color-secondary) r g b / 0.4);
+    align-content: center;
+    padding-right: calc(var(--spacing) * 1.5);
+    border-bottom: 1px solid var(--color-header);
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    a.repo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: inline;
+      font-style: oblique;
+      font-size: clamp(0.7rem, 0.7dvw, .8rem);
+      font-family: var(--code-font);
+    }
+
+    .ctrl-buttons {
+      display: flex;
+      width: fit-content;
+      justify-content: space-evenly;
+      gap: var(--spacing);
+
+      margin-left: auto;
+
+      .btn {
+        display: flex;
+        flex-shrink: 0;
+        position: relative;
+        display: flex;
+        height: .9rem !important;
+        width: .9rem !important;
+        background-color: black;
+        border-radius: 50%;
+        border: 1px solid black;
+        transition:
+          background-color 155ms ease-in-out, border-color 155ms;
+
+        &[id="min"] {
+          &:hover {
+            cursor: pointer;
+            background-color: var(--info);
+            border-color: var(--info);
+          }
+        }
+
+        &[id="fscrn"] {
+          &:hover {
+            cursor: pointer;
+            background-color: var(--warning);
+            border-color:var(--warning);
+          }
+        }
+
+        &[id="close"] {
+          &:hover {
+            cursor: pointer;
+            background-color: var(--error);
+            border-color: var(--error);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .os-window {
+    flex: 1 0 calc((100% - (2 * 1em)) / 2);
+  }
+}
+
+@media screen and (max-width: 926px) {
+  .project-windows {
+    gap: 1em;
+  }
+  .os-window {
+    flex: 1 0 100%;
+  }
+}

@@ -1,49 +1,16 @@
-<header role="banner">
-  <div class="block banner-margin">
-
-    <h1 class="flex center-justified">
-      <span class="banner-title">{{ site.title | lowcase }}</span>
-    </h1>
-
-    <div class="flex center-justified">
-      <nav>
-
-        <ol class="social-list flex row nowrap center-items">
-          <span class="separator" aria-hidden="true"></span>
-
-            <li class="li-info">
-              <span id="mask">email</span>
-              <span id="info">{{ site.email_print }}</span>
-            </li>
-
-          <span class="separator" aria-hidden="true"></span>
-
-            <li class="li-info">
-              <span id="mask">github</span>
-              <span id="info">@{{ site.github_username }}</span>
-            </li>
-
-          <span class="separator" aria-hidden="true"></span>
-
-            <li class="li-info">
-              <span id="mask">linkedin</span>
-              <span id="info">@{{ site.linkedin_username }}</span>
-            </li>
-
-          <span class="separator" aria-hidden="true"></span>
-        </ol>
-
-      </nav>
+<header role="banner" id="banner">
+  <div class="banner-content">
+    <div class="title">
+      <a href="{{ "/" | relative_url }}">{{ site.title }}</a>
     </div>
-
-    <div class="podium">
-      <div class="highlight">
-        <div class="cover"></div>
-      </div>
-      <div class="highlight-blur">
-        <div class="cover"></div>
-      </div>
-    </div>
-
+    <nav class="nav-list">
+      <li>
+        <a{% if page.title == "Blog" or page.url contains "/blog/" %} class="curr-page" {% endif %} href="{{ "/blog" | relative_url }}">blog</a>
+      </li>
+      <li>
+        <a {% if page.title == "Projects" or page.url contains "/projects/" %} class="curr-page" {% endif %} href="{{ "/projects" | relative_url }}">projects</a>
+      </li>
+    </nav>
   </div>
+  <div aria-hidden="true" class="head-divide"></div>
 </header>

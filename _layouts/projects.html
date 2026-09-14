@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{%- if site.projects.size > 0 -%}
+<div class="site-projects">
+  <div class="site-projects-info">
+    <h2>{{ page.title | downcase }}</h2>
+  </div>
+</div>
+{%- else -%}
+<div style="height: 100%; display: flex; justify-content: center; align-items: center; font-style: italic;">
+  nothing here...
+</div>
+{%- endif -%}

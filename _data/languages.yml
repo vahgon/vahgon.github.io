@@ -1,0 +1,26 @@
+c:
+  logo: "/assets/logos/c.svg"
+
+c++:
+  logo: "/assets/logos/cpp.svg"
+
+rust:
+  logo: "/assets/logos/rust.svg"
+
+jekyll:
+  logo: "/assets/logos/jekyll.svg"
+
+sass:
+  logo: "/assets/logos/sass.svg"
+
+vulkan:
+  logo: "/assets/logos/vulkan.svg"
+
+html:
+  logo: "/assets/logos/html5.svg"
+
+python:
+  logo: "/assets/logos/python.svg"
+
+javascript:
+  logo: "/assets/logos/js.svg"

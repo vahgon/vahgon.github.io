@@ -3,12 +3,11 @@
   <head>
     {%- include head.html -%}
   </head>
-
-  <body class="site-text antialiased site-border">
-    <main class="site-content-container">
-      {%- include sidebar.html -%}
-
-      {{ content }}
-    </main>
+  <body class="grid">
+    {%- include banner.html -%}
+    <main id="page" {%- if page.layout =="home" -%}style="align-content: center"{%- endif -%}>{{ content }}</main>
+    {%- if page.layout != "home" -%}
+      {%- include footer.html -%}
+    {%- endif -%}
   </body>
 </html>

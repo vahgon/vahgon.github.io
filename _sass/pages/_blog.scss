@@ -1,0 +1,104 @@
+.site-posts {
+  display: flex;
+  margin-top: 3rem;
+  flex-flow: column nowrap;
+  width: 100%;
+
+  h2 {
+    display: flex;
+    margin: 0 0 2rem 0;
+  }
+}
+
+.site-posts .post-list {
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: center;
+  width: 100%;
+
+  > :not(:first-child) {
+    margin-top: 1.5rem;
+  }
+
+  .post-teaser {
+    min-width: 0;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    border-radius: 7px;
+    padding: calc(var(--spacing));
+
+    h4 {
+      all: unset;
+      display: block;
+      flex: 0 0 auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: clamp(.8rem, .9vw + .1rem, 2rem);
+      font-weight: 600;
+      margin-right: .5rem;
+    }
+
+    a {
+      min-width: 0;
+      
+      &:link {
+      }
+
+      &:visited {
+      }
+    }
+
+    .post-info {
+      display: flex;
+      flex-flow: row nowrap;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-items: center;
+      margin: 0 0 0 auto;
+      font-size: clamp(.7rem, .5vw + .25rem, 3rem);
+      color: var(--color-text);
+      font-style: oblique;
+      position: relative;
+
+      time {
+        display: flex;
+        position: relative;
+        margin: 0;
+        margin-right: auto;
+        font-size: inherit;
+        color: inherit;
+      }
+
+      .ttr {
+        width: fit-content;
+        display: flex;
+        flex: 0 0 auto;
+        font-family: var(--base-font);
+        font-size: inherit;
+        color: rgb(from var(--color-text) / 30%);
+      }
+
+      .separator {
+        display: flex;
+        height: clamp(1px, .1vw + 0rem, 5px);
+        width: clamp(.4rem, .5vw + .3rem, 1rem);
+        border-radius: 8px;
+        align-content: center;
+        justify-content: center;
+        background-color: var(--color-tertiary);
+        margin: 0 clamp(.8rem, .5vw + .25rem, 2rem);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .ttr,
+  .separator {
+    visibility: hidden;
+    display: none;
+    position: absolute;
+  }
+}

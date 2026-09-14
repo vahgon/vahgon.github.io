@@ -1,55 +1,70 @@
-%clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+@use '../theme/light_dark';
+
+@use 'vars' as var;
+
+*,
+*::before,
+*::after {
+  scrollbar-gutter: stable both-edges;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-p, %vertical-rhythm {
-  margin-top: 0em;
-  margin-bottom: 1.5em;
+:root {
+  --spacing: #{var.$spacing};
+  font-weight: 350;
 }
 
-a {
-  background-color: transparent;
-  text-decoration: none;
-
-  &:link {
-    color: $color-primary;
-  }
-
-  &:visited {
-    color: $color-crimson;
-  }
+p {
+  line-height: calc(var(--spacing) * 6.5)
 }
 
-.site-text {
-  font: $font-weight-base #{$font-size-base}/#{1.5} $font-base;
-  color: $color-ptext;
-  background-color: $color-background;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern" 1;
-  -moz-font-feature-settings: "kern" 1;
-  -o-font-feature-settings: "kern" 1;
-  font-feature-settings: "kern" 1;
-  font-kerning: normal;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-
-  &.antialiased {
-    -webkit-font-smoothing: antialiased;
-  }
-
-  margin-left: 15rem;
-  margin-right: 15rem;
-
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var.$font-base;
+  -webkit-font-smoothing: antialiased;
+  --base-font: #{var.$font-base};
+  --header-font: #{var.$font-header};
+  --code-font: #{var.$font-code};
 }
 
-.site-content-container {
-  display: flex;
+button {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+header, h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+  font-family: #{var.$font-header};
+}
+
+h2 {
+  margin-top: calc(var(--spacing) * 8);
+  margin-bottom: calc(var(--spacing) * 3);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
   justify-content: center;
-  flex-direction: row;
+  min-height: 100dvh;
+  grid-template-areas:
+  "banner"
+  "page"
+  "footer";
+
+  [id="page"] {
+    grid-area: page;
+    justify-self: center;
+    width: 98%;
+    min-width: 0;
+    max-width: clamp(40rem, 20vw + 20rem, 80rem);
+    height: 100%;
+  }
 }
