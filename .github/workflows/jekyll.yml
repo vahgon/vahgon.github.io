@@ -48,7 +48,6 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-        uses: actions/upload-pages-artifact@v3
       - name: setup dependencies
         uses: actions/setup-node@v4
         with:
@@ -58,6 +57,8 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: style code snippets
         run: yarn run highlight
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
 
   # Deployment job
   deploy:
